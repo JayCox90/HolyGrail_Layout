@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
 /* Universal Selector */
 * {
     padding: 0;
@@ -5,46 +7,227 @@
 }
 
 :root {
-    --divsBG: rgb(255, 125, 25);
-
+    --divsBG: rgb(255, 50, 125);
+    --c1: red;
+    --c2: blue;
+    --c3: green;
+    --c4: magenta;
+    --c5: purple;
+    --c6: black;
 }
 
 .el {
     background: var(--divsBG);
+    font-family: 'Lato', sans-serif;
 }
 
-/* Class Selector */
-.body {
-    /* background: red; */
-    height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    /* fr = fraktion */
+/*! MediaQuery for different devices width, that will be discovered due to the fact that the internet browser, knows the geometry of your screen*/
+/*! MediaQuery für unterschiedliche Gerätebreiten, die aufgrund der Tatsache ermittelt werden, dass der Internet-Browser die Geometrie Ihres Bildschirms kennt*/
+/*Laptops*/
+@media screen and (min-width:1025px) {
+
+    /* Class Selector */
+    .body {
+        /* background: red; */
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        /* fr = fraktion */
+    }
+
+    /* Specification of elements */
+    .NavBar {
+        grid-column: 1 / span 12;
+        grid-row: 1 / span 1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navUL {
+        display: flex;
+        gap: 50px;
+        list-style: none;
+    }
+
+    .Footer {
+        grid-column: 1 / span 12;
+        grid-row: 12 / span 1;
+        text-align: center;
+    }
+
+    .LeftPanel {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 10;
+    }
+
+    .RightPanel {
+        grid-column: 11 / span 2;
+        grid-row: 2 / span 10;
+    }
+
+    .Content {
+        grid-column: 3 / span 8;
+        grid-row: 2 / span 10;
+        background: radial-gradient(ellipse, var(--c1), var(--c2), var(--c3), transparent),
+            radial-gradient(ellipse at top, var(--c4), var(--c5), var(--c6),
+                transparent);
+        background-size: 400% 400%;
+        -webkit-animation: prettyAnimatedGradient 5s ease-in-out infinite;
+    }
+
+    @-webkit-keyframes prettyAnimatedGradient {
+        0% {
+            background-position: 50% 100%;
+        }
+
+        50% {
+            background-position: 120% 100%;
+        }
+
+        100% {
+            background-position: 50% 100%;
+        }
+    }
 }
 
-/* Specification of elements */
-.NavBar {
-    grid-column: 1 / span 12;
-    grid-row: 1 / span 1;
+/*Tablets*/
+@media screen and (min-width:769px) and (max-width:1024px) {
+
+    /* Class Selector */
+    .body {
+        /* background: red; */
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        /* fr = fraktion */
+    }
+
+    /* Specification of elements */
+    .NavBar {
+        grid-column: 1 / span 12;
+        grid-row: 1 / span 1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navUL {
+        display: flex;
+        gap: 50px;
+        list-style: none;
+    }
+
+    .Footer {
+        grid-column: 1 / span 12;
+        grid-row: 12 / span 1;
+        text-align: center;
+    }
+
+    .LeftPanel {
+        grid-column: 1 / span 3;
+        grid-row: 2 / span 10;
+    }
+
+    .RightPanel {
+        grid-column: 10 / span 3;
+        grid-row: 2 / span 10;
+    }
+
+    .Content {
+        grid-column: 4 / span 6;
+        grid-row: 2 / span 10;
+        background: radial-gradient(ellipse, var(--c1), var(--c2), var(--c3), transparent),
+            radial-gradient(ellipse at top, var(--c4), var(--c5), var(--c6),
+                transparent);
+        background-size: 400% 400%;
+        -webkit-animation: prettyAnimatedGradient 5s ease-in-out infinite;
+    }
+
+    @-webkit-keyframes prettyAnimatedGradient {
+        0% {
+            background-position: 50% 100%;
+        }
+
+        50% {
+            background-position: 120% 100%;
+        }
+
+        100% {
+            background-position: 50% 100%;
+        }
+    }
 }
 
-.Footer {
-    grid-column: 1 / span 12;
-    grid-row: 12 / span 1;
-}
+/*Smart Phones*/
+@media screen and (max-width:768px) {
 
-.LeftPanel {
-    grid-column: 1 / span 2;
-    grid-row: 2 / span 10;
-}
+    /* Class Selector */
+    .body {
+        /* background: red; */
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        /* fr = fraktion */
+    }
 
-.RightPanel {
-    grid-column: 11 / span 2;
-    grid-row: 2 / span 10;
-}
+    /* Specification of elements */
+    .NavBar {
+        grid-column: 1 / span 12;
+        grid-row: 1 / span 1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-.Content {
-    grid-column: 3 / span 8;
-    grid-row: 2 / span 10;
+    .navUL {
+        display: flex;
+        gap: 50px;
+        list-style: none;
+    }
+
+    .Footer {
+        grid-column: 1 / span 12;
+        grid-row: 12 / span 1;
+        text-align: center;
+    }
+
+    .LeftPanel {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 4;
+        background-color: red;
+    }
+
+    .RightPanel {
+        grid-column: 1 / span 2;
+        grid-row: 6 / span 6;
+        background-color: blue;
+    }
+
+    .Content {
+        grid-column: 3 / span 10;
+        grid-row: 2 / span 10;
+        background: radial-gradient(ellipse, var(--c1), var(--c2), var(--c3), transparent),
+            radial-gradient(ellipse at top, var(--c4), var(--c5), var(--c6),
+                transparent);
+        background-size: 400% 400%;
+        -webkit-animation: prettyAnimatedGradient 5s ease-in-out infinite;
+    }
+
+    @-webkit-keyframes prettyAnimatedGradient {
+        0% {
+            background-position: 50% 100%;
+        }
+
+        50% {
+            background-position: 120% 100%;
+        }
+
+        100% {
+            background-position: 50% 100%;
+        }
+    }
 }
